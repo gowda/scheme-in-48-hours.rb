@@ -1,0 +1,28 @@
+require:
+  - rubocop-minitest
+  - rubocop-rake
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - bin/*
+    - vendor/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/ClassLength:
+  Exclude:
+    - test/**/*_test.rb
+
+Metrics/MethodLength:
+  Exclude:
+    - test/**/*_test.rb
+
+Metrics/AbcSize:
+  Exclude:
+    - test/**/*_test.rb
+    - lib/compiler/cli.rb
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded

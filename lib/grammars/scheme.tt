@@ -1,0 +1,31 @@
+# frozen_string_literal: true
+
+grammar Scheme
+  rule program
+    symbol / string / number
+  end
+
+  rule number
+    real / integer
+  end
+
+  rule real
+    integer '.' integer
+  end
+
+  rule integer
+    [0-9]+
+  end
+
+  rule string
+    '"' [^"]* '"'
+  end
+
+  rule symbol
+    [-+!$%&|*/:<=?>@^_~#]
+  end
+
+  rule space
+    [\s\n\t]+
+  end
+end
