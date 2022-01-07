@@ -2,7 +2,11 @@ name: test
 
 on:
   pull_request:
+    paths-ignore:
+      - README.md
   push:
+    paths-ignore:
+      - README.md
     branches:
       - master
 
@@ -27,5 +31,5 @@ jobs:
         run: |
           bundle config path vendor/bundle
           bundle install --retry 3
-      - name: Rubocop
+      - name: Test
         run: bin/rake test
