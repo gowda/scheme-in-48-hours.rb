@@ -7,7 +7,7 @@ class PrimitivesTest < Minitest::Test
 
   def setup
     setup_aruba
-    append_environment_variable 'PATH', ":#{File.expand_path('../bin', __dir__)}"
+    prepend_environment_variable 'PATH', "#{File.expand_path('../bin', __dir__)}:"
   end
 
   def test_string
